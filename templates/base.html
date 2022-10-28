@@ -1,0 +1,45 @@
+<!DOCTYPE html">
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" media="all" />
+<script src="{{ url_for('static', filename='jquery-3.6.0.js') }}"></script>
+</head>
+
+<body>
+
+    <div id="shell" height=auto>
+        <div id="header">
+          <h1 class="title"><a href="/">Job Hunters</a></h1>
+          <div class="top-bar">
+            <div class="links">         
+                {% block links %}
+                <span><a href="/add_job" >Create a New Job Listing</a></span>               
+                {% endblock %}  
+            </div>
+            <div class="cl">&nbsp;</div>
+          </div>
+        </div>
+        <div id="navigation">
+          <ul>
+            <li><a href="/accounting">ACCOUNTING & FINANCE</a></li>
+            <li><a href="/engineering">ENGINEERING</a></li>
+            <li><a href="/healthcare">HEALTHCARE & NURSING</a></li>
+            <li><a href="/sales">SALES</a></li>
+          </ul>
+          <div class="cl">&nbsp;</div>
+        </div>
+      
+        {% block body %}
+        {% endblock %}
+        
+        <div id="footer" style='height:auto'>
+          <p class="lf">Copyright &copy; 2022 <a href="#">JobHunters</a> - All Rights Reserved</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+
+{% block script %}
+{% endblock %}
+
+</body>
+</html>
